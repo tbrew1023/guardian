@@ -1,0 +1,26 @@
+$ColorWhite: #FFFFFF;
+$ColorOffWhite: #F5F5F5;
+$ColorBlack: #000000;
+$ColorDarkBlue: #37474F;
+$ColorGreen: #81C784;
+$ColorGray: #BDBDBD;
+$ColorLightGray: #E0E0E0;
+$ColorRed: #e57373;
+
+@mixin basic-button($background-color, $font-color) {
+  background-color: $background-color;
+  border: none;
+  border-radius: 10px;
+  color: $font-color;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 11px;
+  margin: 20px 0px 0px 0px;
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
