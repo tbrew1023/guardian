@@ -19,7 +19,7 @@
           <input type="text" placeholder="Full Name" v-model="child.child_name" required><br>
           <input type="date" placeholder="Birthdate" v-model="child.birthdate" required><br>
           <input type="text" placeholder="Address" v-model="child.address" required><br>
-          <input type="text" placeholder="Additional Comments" v-model="child.comments" required><br>
+          <input type="text" placeholder="Additional Comments" v-model="child.comments"><br>
         </div>
         <div id="col3" class="col">
           <h3>Emergency Contact Information</h3>
@@ -28,7 +28,22 @@
           <input type="text" placeholder="Phone Number" v-model="child.emergency_contact.phone" required><br>
           <input type="text" placeholder="Address" v-model="child.emergency_contact.address" required><br>
         </div>
-        <div id="finish" class="col">
+        <div id="col4">
+          <h3>Holiday Attendance</h3>
+          <input type="checkbox" v-model="child.holidays.christmas"><span>Christmas</span><br>
+          <input type="checkbox" v-model="child.holidays.columbus_day"><span>Columbus Day</span><br>
+          <input type="checkbox" v-model="child.holidays.easter"><span>Easter</span><br>
+          <input type="checkbox" v-model="child.holidays.election_day"><span>Election Day</span><br>
+          <input type="checkbox" v-model="child.holidays.july_4"><span>Independence Day</span><br>
+          <input type="checkbox" v-model="child.holidays.labor_day"><span>Labor Day</span><br>
+          <input type="checkbox" v-model="child.holidays.memorial_day"><span>Memorial Day</span><br>
+          <input type="checkbox" v-model="child.holidays.mlk_day"><span>MLK Day</span><br>
+          <input type="checkbox" v-model="child.holidays.new_years"><span>New Years</span><br>
+          <input type="checkbox" v-model="child.holidays.presidents_day"><span>Presidents Day</span><br>
+          <input type="checkbox" v-model="child.holidays.thanksgiving"><span>Thanksgiving</span><br>
+          <input type="checkbox" v-model="child.holidays.veterans_day"><span>Veterans Day</span><br>
+        </div>
+        <div id="col5" class="col">
           <h3>Complete Enrollment</h3>
           <input type="submit" value="Finish" class="btn-submit btn">
           <router-link to="/" class="back-link"><div class="btn-cancel btn">Cancel</div></router-link>
@@ -64,6 +79,20 @@ export default {
           relation: null,
           phone: null,
           address: null
+        },
+        holidays: {
+          christmas: null,
+          columbus_day: null,
+          easter: null,
+          election_day: null,
+          july_4: null,
+          labor_day: null,
+          memorial_day: null,
+          mlk_day: null,
+          new_years: null,
+          presidents_day: null,
+          thanksgiving: null,
+          veterans_day: null
         }
       }
     }
@@ -90,6 +119,20 @@ export default {
             relation: this.child.emergency_contact.relation,
             phone: this.child.emergency_contact.phone,
             address: this.child.emergency_contact.address
+          },
+          holidays: {
+            christmas: this.child.holidays.christmas,
+            columbus_day: this.child.holidays.columbus_day,
+            easter: this.child.holidays.easter,
+            election_day: this.child.holidays.election_day,
+            july_4: this.child.holidays.july_4,
+            labor_day: this.child.holidays.labor_day,
+            memorial_day: this.child.holidays.memorial_day,
+            mlk_day: this.child.holidays.mlk_day,
+            new_years: this.child.holidays.new_years,
+            presidents_day: this.child.holidays.presidents_day,
+            thanksgiving: this.child.holidays.thanksgiving,
+            veterans_day: this.child.holidays.veterans_day
           }
         }
       })
@@ -109,18 +152,26 @@ export default {
   left: 0;
   right: 0;
   top: 200px;
-  padding: 0px 300px 0px 300px;
+  padding: 0px 200px 0px 200px;
 }
 
 h3 {
   font-weight: normal;
   font-size: 18px;
+  text-align: center;
+}
 
+span {
+  margin-left: 15px;
 }
 
 input {
   margin-left: auto;
   margin-right: auto;
+}
+
+input[type="checkbox"] {
+  margin-left: 80px;
 }
 
 input[type="date"] {
@@ -144,7 +195,7 @@ input[type="date"] {
 
 #new-guardian-form {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   //background-color: red;
 }
 
