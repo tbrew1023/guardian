@@ -1,6 +1,7 @@
 <template>
   <div id="navbar">
     <ul>
+      <h1>Child Enrollment</h1>
       <router-link v-for="tab in tabs" v-on:click.native="handleTabClick(tab)" class="nav-item" :to="tab.url">
         <li :class="{selected: tab.selected}"><span>{{tab.title}}</span></li>
       </router-link>
@@ -14,14 +15,14 @@ export default {
   data() {
     return {
       tabs: [
-        {
+        /*{
           title: 'Dashboard',
           url: '/',
           selected: true
         },
-        /*{
-          title: 'New Employee',
-          url: '/new_employee',
+        {
+          title: 'Schedule a Tour',
+          url: '/schedule',
           selected: false
         },*/
         /*{
@@ -56,6 +57,7 @@ export default {
   width: 100%;
   background-color: $ColorDarkBlue;
   height: 60px;
+  line-height: 60px;
   z-index: 1;
 }
 
@@ -67,11 +69,24 @@ export default {
   outline: 0;
 }
 
+#navbar a:visited {
+  color: $ColorWhite;
+}
+
 #navbar ul {
   display: inline-flex;
   list-style: none;
   margin: 0px;
   float: left;
+  color: $ColorWhite;
+}
+
+h1 {
+  color: white;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 24px;
+  margin-left: 10px;
 }
 
 .selected {

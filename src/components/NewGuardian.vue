@@ -46,7 +46,7 @@
         <div id="col5" class="col">
           <h3>Complete Enrollment</h3>
           <input type="submit" value="Finish" class="btn-submit btn">
-          <router-link to="/" class="back-link"><div class="btn-cancel btn">Cancel</div></router-link>
+          <a href="http://preciousdayslearningacademy.com" class="back-link"><div class="btn-cancel btn">Cancel</div></a>
         </div>
       </div>
     </form>
@@ -136,7 +136,7 @@ export default {
           }
         }
       })
-      .then(docRef => this.$router.push('/'))
+      .then(alert("Enrollment form was submitted!")).then(docRef => this.$router.go('http://preciousdayslearningacademy.com'))
       .catch(error => console.log(error))
     }
   }

@@ -5,6 +5,7 @@ import Dashboard from '@/components/Dashboard'
 import NewGuardian from '@/components/NewGuardian'
 import ViewGuardian from '@/components/ViewGuardian'
 import EditGuardian from '@/components/EditGuardian'
+import Schedule from '@/components/Schedule'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/edit_guardian/:phone',
       name: 'edit-guardian',
       component: EditGuardian
+    },
+    {
+      path: '/schedule',
+      name: 'schedule',
+      component: Schedule
     }
   ]
 })
